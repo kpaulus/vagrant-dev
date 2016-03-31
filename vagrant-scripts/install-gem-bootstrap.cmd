@@ -1,0 +1,3 @@
+echo Installing Ruby Gem bootstrap-sass...
+C:\tools\ruby22\bin\gem install bootstrap-sass -v 3.3.5
+echo Done!

@@ -1,0 +1,3 @@
+echo Installing Ruby Gem Sass...
+C:\tools\ruby22\bin\gem install sass
+echo Done!

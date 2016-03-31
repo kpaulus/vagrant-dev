@@ -1,0 +1,3 @@
+echo Installing Ruby Gem Compass...
+C:\tools\ruby22\bin\gem install compass
+echo Done!

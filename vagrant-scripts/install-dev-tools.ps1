@@ -1,74 +1,59 @@
-# Install Chocolatey
-iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))
-
 # Install MS WebDeploy
-choco install webdeploy
+choco install -y webdeploy
 
 # Install DotNet 4.5
-choco install dotnet4.5
-
-# Install Visual Studio
-choco install VisualStudio2013Ultimate
-
-# Install Ms SQL Server 2012 Express
-choco install MsSqlServer2012Express
+choco install -y dotnet4.5.1
 
 # Install Resharper
-choco install resharper
+choco install -y resharper
 
 # Install Webstorm
-choco install webstorm
+choco install -y webstorm
 
 # Install TortoiseSVN
-choco install tortoisesvn
+choco install -y tortoisesvn
 
 # Install Git
-choco install git
+choco install -y git
 
 # Install Mercurial
-choco install hg
+choco install -y hg
 
 # Install Sublime Text 2
-choco install sublimetext2
+choco install -y sublimetext2
 
-# Install Fiddler 2.4.9
-choco install fiddler
+# Install Fiddler 4
+choco install -y fiddler4
 
 # Install Sandcastle
-choco install sandcastle
+choco install -y sandcastle
 
 # Install Nant
-choco install nant
+choco install -y nant
 
 # Install Google Chrome
-choco install googlechrome
+choco install -y googlechrome
 
 # Install Apache Ant
-choco install ant
+choco install -y ant
 
 # Install JDK
-choco install jdk8
+choco install -y jdk8
 
 # Install NodeJS
-choco install nodejs.install
+choco install -y nodejs.install
 
 # Install ruby
-choco install ruby
+choco install -y ruby
 
 # Install PhantomJS
-choco install phantomjs
+choco install -y phantomjs
 
 # Install PuTTY
-choco install putty
+choco install -y putty
 
 # Install NUnit
-choco install nunit
+choco install -y nunit
 
 # Install NServicebus MSMQ
-choco install nservicebus.msmq.install
-
-# Install Ruby Gems
-Write-Host "Installing Ruby Gems..."
-gem install sass
-gem install compass
-gem install bootstrap-sass -v 3.3.5
+choco install -y nservicebus.msmq.install

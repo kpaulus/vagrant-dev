@@ -8,10 +8,20 @@ ENV['VAGRANT_DEFAULT_PROVIDER'] = 'virtualbox'
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|  
 
-  config.vm.box = "atomia/windows-2012R2"
+  config.vm.box = "opentable/win-2012r2-standard-amd64-nocm"
   config.vm.guest = :windows
   
   config.vm.communicator = "winrm"
+  config.vm.provider :virtualbox do |v|
+    v.name = "windows"
+    v.memory = 2048
+    v.cpus = 1
+  end
+  
+  config.winrm.username = "vagrant"
+  config.winrm.password = "vagrant"
+  config.winrm.retry_limit = 30
+  config.winrm.retry_delay = 10
   
   config.vm.network "private_network", ip: "192.168.123.123"
   config.vm.network :forwarded_port, guest: 1025, host: 1025
@@ -30,14 +40,19 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   
   #Restore DB
   #config.vm.provision :shell, path: "vagrant-scripts/create-database.cmd"
-   
+  
+  # Development Tools
+  config.vm.provision :shell, path: "vagrant-scripts/install-chocolatey.cmd"
+  config.vm.provision :shell, path: "vagrant-scripts/install-dev-tools.ps1"
+  config.vm.provision :shell, path: "vagrant-scripts/install-gem-sass.cmd"
+  config.vm.provision :shell, path: "vagrant-scripts/install-gem-compass.cmd"
+  config.vm.provision :shell, path: "vagrant-scripts/install-gem-bootstrap.cmd"
+  config.vm.provision :shell, path: "vagrant-scripts/install-ms-dev-tools.ps1"
+
   # IIS   
   #config.vm.provision :shell, path: "vagrant-scripts/install-iis.cmd"
   config.vm.provision :shell, path: "vagrant-scripts/provision-web.ps1"
-  
-  # Development Tools
-  config.vm.provision :shell, path: "vagrant-scripts/install-dev-tools.ps1"
-  
+    
   #Create Website
   #config.vm.provision :shell, path: "vagrant-scripts/copy-website.ps1"
   #config.vm.provision :shell, path: "vagrant-scripts/build-website.cmd"
