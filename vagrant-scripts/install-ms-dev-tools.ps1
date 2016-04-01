@@ -5,4 +5,4 @@ choco install -y VisualStudio2013Ultimate
 choco install -y MsSqlServer2014Express
 
 # Install SQL Server Express Management Studio
-choco install mssqlservermanagementstudio2014express
+choco install -y mssqlservermanagementstudio2014express
