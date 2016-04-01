@@ -41,13 +41,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   #Restore DB
   #config.vm.provision :shell, path: "vagrant-scripts/create-database.cmd"
   
-  # Development Tools
-  config.vm.provision :shell, path: "vagrant-scripts/install-chocolatey.cmd"
-  config.vm.provision :shell, path: "vagrant-scripts/install-dev-tools.ps1"
-  config.vm.provision :shell, path: "vagrant-scripts/install-gem-sass.cmd"
-  config.vm.provision :shell, path: "vagrant-scripts/install-gem-compass.cmd"
-  config.vm.provision :shell, path: "vagrant-scripts/install-gem-bootstrap.cmd"
-  config.vm.provision :shell, path: "vagrant-scripts/install-ms-dev-tools.ps1"
+  # Zap - Development Tools
+  config.vm.provision :shell, path: "vagrant-scripts/zap/install-chocolatey.cmd"
+  config.vm.provision :shell, path: "vagrant-scripts/zap/install-dev-tools.ps1"
+  config.vm.provision :shell, path: "vagrant-scripts/zap/install-gem-sass.cmd"
+  config.vm.provision :shell, path: "vagrant-scripts/zap/install-gem-compass.cmd"
+  config.vm.provision :shell, path: "vagrant-scripts/zap/install-gem-bootstrap.cmd"
+  config.vm.provision :shell, path: "vagrant-scripts/zap/install-ms-dev-tools.ps1"
 
   # IIS   
   #config.vm.provision :shell, path: "vagrant-scripts/install-iis.cmd"
